@@ -21,9 +21,9 @@ public class EjercicioDos {
          // TODO code application logic here
         String nombre;
         Scanner miScan = new Scanner(System.in);
-        System.out.println("Ingrese nombre");
+        System.out.println("Ingrese nombre"); 
         nombre = miScan.nextLine(); 
-        System.out.println("El nombre ingresado es: " + nombre);
+        System.out.println("El nombre ingresado es:  " + nombre +".");
         
        
     }
