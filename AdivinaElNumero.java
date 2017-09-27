@@ -18,29 +18,56 @@ public class AdivinaElNumero {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Integer diferencia;
         Integer numeroSecreto;
         String datoAux;
+        String datoAuxDos;
         Scanner miScanner = new Scanner(System.in);
         Random aleatorio = new Random(System.currentTimeMillis());
-        
-        int intAleatorio =aleatorio.nextInt(10);
-        aleatorio.setSeed(System.currentTimeMillis());
-        
+         
         System.out.println("Ingrese el numero");
         datoAux=miScanner.next();
         numeroSecreto=Integer.parseInt(datoAux);
+        
+        int intAleatorio =aleatorio.nextInt(10);
+        aleatorio.setSeed(System.currentTimeMillis());
+        System.out.println("El numero secreto es: "+intAleatorio); 
+         
         if (intAleatorio==numeroSecreto) 
         {            
             System.out.println("Ganaste!");
-        }
-         
-        else {
-                System.out.println("Intente de nuevo");
-                if (intAleatorio>numeroSecreto){
+        }else 
+            {
+                if (intAleatorio>numeroSecreto)
+                {
                     System.out.println("Te falto");
-                }else{
-                        System.out.println("Te pasaste");
-                     }
-             }
+                    diferencia=intAleatorio-numeroSecreto;
+                }else
+                {
+                    System.out.println("Te pasaste");
+                    diferencia=numeroSecreto-intAleatorio;
+                }
+                switch (diferencia)
+                {
+                    
+                    case 1 :
+                          System.out.println("Casi casi.");
+                          break;
+                    case 2 : 
+                        System.out.println("Cerca");
+                        break;
+                    case 3 :
+                        System.out.println("Ni cerca");
+                        break;
+                    case 4 :
+                        System.out.println("Bien lejos");
+                        break;
+                    default : 
+                        System.out.println("Sos horrible en este juego");
+                        break;
+                }
+            }
     }
-}    
+}
+    
+
